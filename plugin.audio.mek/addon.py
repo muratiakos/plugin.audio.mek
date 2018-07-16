@@ -4,15 +4,23 @@ from kodiswift import Plugin
 
 plugin = Plugin()
 
-
 @plugin.route('/')
 def index():
-    item = {
-        'label': 'Hello Kodi!',
-        'path': 'http://example.com/video.mp4',
-        'is_playable': True
-    }
-    return [item]
+    items = [
+        {'label': 'Hola Kodi!', 'path': plugin.url_for('show_label', label='spanish')},
+        {'label': 'Bonjour Kodi!', 'path': plugin.url_for('show_label', label='french')},
+    ]
+    return items
+
+
+@plugin.route('/labels/<label>/')
+def show_label(label):
+    # Normally we would use label to parse a specific web page, in this case we are just
+    # using it for a new list item label to show how URL parsing works.
+    items = [
+        {'label': label},
+    ]
+    return items
 
 
 if __name__ == '__main__':
