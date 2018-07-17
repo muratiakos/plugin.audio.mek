@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from kodiswift import Plugin
 
+# https://kodi.wiki/view/Add-on:Parsedom_for_xbmc_plugins
 
 plugin = Plugin()
 
