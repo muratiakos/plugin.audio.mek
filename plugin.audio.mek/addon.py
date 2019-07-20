@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
 from kodiswift import Plugin
+import CommonFunctions
 
 # https://kodi.wiki/view/Add-on:Parsedom_for_xbmc_plugins
 
 plugin = Plugin()
+common = CommonFunctions
+common.plugin = "MEK.Audiobook-0.1"
+
 
 @plugin.route('/')
 def index():
